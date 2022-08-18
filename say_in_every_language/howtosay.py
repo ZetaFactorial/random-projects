@@ -7,7 +7,7 @@ def howtosay(word='Россия'):
     with open('howtosay', 'w', encoding="utf-8") as f:
         for lang in googletrans.LANGUAGES.keys():
             result = translator.translate(word, src='ru', dest=lang)
-            f.write('{}: {}'.format(lang, result.text)+'\n')
+            f.write('{}: {}\n'.format(lang, result.text))
 
 if __name__ == '__main__':
     howtosay()
