@@ -1,13 +1,13 @@
 import googletrans
 
-def howtosay(word='Россия'):
+def in_every_language(phrase='I love you', fromlang='en', filename='in_every_language'):
 
     translator = googletrans.Translator()
 
-    with open('howtosay', 'w', encoding="utf-8") as f:
-        for lang in googletrans.LANGUAGES.keys():
-            result = translator.translate(word, src='ru', dest=lang)
-            f.write('{}: {}\n'.format(lang, result.text))
+    with open(filename, 'w', encoding="utf-8") as file:
+        for lang in googletrans.LANGCODES:
+            result = translator.translate(phrase, src=fromlang, dest=lang)
+            file.write(f'{lang}: {result.text}\n')
 
 if __name__ == '__main__':
-    howtosay()
+    in_every_language()
