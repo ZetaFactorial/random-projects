@@ -1,6 +1,6 @@
 import googletrans
 
-def in_every_language(phrase='I love you', fromlang='en', filename='in_every_language'):
+def in_every_language(phrase='I love you', fromlang='en', filename='in_every_language.txt'):
 
     translator = googletrans.Translator()
 
